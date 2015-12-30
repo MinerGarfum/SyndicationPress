@@ -1,0 +1,78 @@
+/*
+ThinText + Colors!
+*/
+
+h1{
+	font-size:46px;
+	font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight:100;
+}
+h2{
+	font-size:32px;
+	font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight:100;
+}
+h3{
+	font-size:27px;
+	font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight:100;
+}
+h4{
+	font-size:46px;
+	font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight:100;
+}
+h5{
+	font-size:46px;
+	font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight:100;
+}
+h6{
+	font-size:46px;
+	font-family:Helvetica Neue, Helvetica, Arial, sans-serif;
+	font-weight:100;
+}
+p{
+	font-size: 18px;
+	font-family:Helvetica, Arial;
+	font-weight:100;
+}
+button{
+	font-size: 18px;
+	font-family:Helvetica, Arial;
+	font-weight:300;
+}
+input{
+	font-size: 18px;
+	font-family:Helvetica, Arial;
+	font-weight:300;
+}
+body{
+	font-size: 18px;
+	font-family:Helvetica, Arial;
+	font-weight:300;
+}
+.red{
+	font-size: 18px;
+	font-family:Helvetica, Arial;
+	font-weight:100;
+	color: red;
+}
+.green{
+	font-size: 18px;
+	font-family:Helvetica, Arial;
+	font-weight:100;
+	color: green;
+}
+.blue{
+	font-size: 18px;
+	font-family:Helvetica, Arial;
+	font-weight:100;
+	color: blue;
+}
+.yellow{
+	font-size: 18px;
+	font-family:Helvetica, Arial;
+	font-weight:100;
+	color: yellow;
+}

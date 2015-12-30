@@ -1,0 +1,44 @@
+<!DOCTYPE html>  <!-- Just to be classy :) -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Syndication Press</title>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="shortcut icon" href="art/shortcut-icon.png" /> <!-- Icon -->
+
+<script src="main.js"></script>
+
+</head>
+<body>
+
+    <div id="wrapper">
+
+    	<div id="topbar">
+    		<div>
+    			<b id="topbox">Syndiaction Press</b> | Version: 0.0.1
+    		</div>
+    	</div>
+
+        <div id="game">
+
+	        <div id="stats">
+		        <p id="stats"></p>
+		    </div>
+
+		    <p id="name" onclick="Game.changeCompanyName()"></p>
+
+            <script>
+				document.getElementById("stats").innerHTML =
+				"Money: " + Game.money
+				+ "<br> Jobs: " + Game.jobs
+				+ "<br> Staff: " + Game.staff;
+
+				document.getElementById("name").innerHTML = "Company Name: " + Game.companyName;
+            </script>
+
+            <button onclick="Game.addMoney(50)" type="button">Give $50</button>
+        </div>
+    </div>
+</body>
+</html>
