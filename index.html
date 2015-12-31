@@ -66,15 +66,11 @@
                     amount = 0;
                 }
 
-                Load = function () {
-                    Main();
-                }
-
                 Main = function () {
                     u("money").innerHTML = Game.money;
-                    setTimeout(Main,1000/30);
+                    setTimeout(Main, 1000 / 30);
                 }
-                Load();
+                Main();
             </script>
         </div>
     </div>
