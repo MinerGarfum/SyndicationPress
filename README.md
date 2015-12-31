@@ -8,4 +8,4 @@ I am working out the rest of the idea as I code it but in the mean time, you can
 
 
 # Links!
-Online game: [Click __ME!__](http://syndicationpress.gear.host/) _- Yesss, it is curentaly being hsted free, without a paid domain :(_
+Online game: [Click __ME!__](http://syndicationpress.gear.host/) _- Yesss, it is curentaly being hosted free, without a paid domain :(_
