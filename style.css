@@ -164,3 +164,18 @@ input{
 	bottom: 0px;
 	overflow: hidden;
 }
+#rightpanel {
+    position: absolute;
+    right: 200px;
+    top: 100px;
+}
+#basicpress {
+    position: absolute;
+    left: 50px;
+    width: 300px;
+}
+.basicpress {
+    background: url("art/BasicPress.png");
+    width:32px;
+    height:32px;
+}
