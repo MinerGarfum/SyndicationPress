@@ -30,7 +30,8 @@ What I am working on:
             <button onclick="Game.addMoney(-50)" type="button">Subtract $50</button>
 
             <div id="rightpanel">
-                <div id="basicpress"><div class="basicpress"></div><b>Basic Press</b></div>
+                <div id="store">
+                </div>
             </div>
 
             <script>
@@ -47,6 +48,18 @@ What I am working on:
                 Game.staff = 1;
                 Game.version = "0.0.1";
 
+                Game.buildStore = 1;
+
+                BuildStore = function () {
+
+                    var str = '';
+                    for (var t in Items) {
+                        str += '<div id="buy' + Items[t].name + '" style="background:url("' + Items[t].image + '.png");"></div>';
+                    }
+                    u('store').innerHTML = str;
+                    Game.buildStore = 0;
+                }
+
                 Items = [];
                 Item = function (name, desc, image, price) {
                     this.name = name;
@@ -54,10 +67,16 @@ What I am working on:
                     this.image = image;
                     this.price = price;
                     Items[name] = this;
+
+                    this.buy = function () {
+                        if (Game.money >= this.price) {
+                            Game.money -= this.price;
+                        }
+                    }
                 }
-                new Item("Basic newspaper press", "A basic newspaper press for your basic needs.", "art/BasicPress.png", 100);
-                new Item("Newspaper press", "A reagular newspaper press.", "", 250);
-                new Item("Advanced newspaper Press", "A advanced newspaper press for projects that\nrequire a lot of printing, ex:newspapers", "", 1000);
+                new Item("Basic Press", "A basic newspaper press for your basic needs.", "basicpress", 100);
+                //new Item("Newspaper press", "A reagular newspaper press.", "", 250);
+                //new Item("Advanced newspaper Press", "A advanced newspaper press for projects that\nrequire a lot of printing, ex:newspapers", "", 1000);
 
                 Game.addMoney = function (amount) {
                     Game.money += amount;
@@ -69,11 +88,18 @@ What I am working on:
                 }
 
                 Main = function () {
+
+                    if (Game.buildStore) {
+                        var str = "";
+                        BuildStore();
+                        Game.buildStore = 0;
+                    }
+
                     u("money").innerHTML = Game.money;
 
-                    if (Game.money > 0) u("money").style.color="black";
-                    if (Game.money == 0) u("money").style.color="orange";
-                    if (Game.money < 0) u("money").style.color="red";
+                    if (Game.money > 0) u("money").style.color = "black";
+                    if (Game.money == 0) u("money").style.color = "orange";
+                    if (Game.money < 0) u("money").style.color = "red";
 
                     setTimeout(Main, 1000 / 30);
                 }
