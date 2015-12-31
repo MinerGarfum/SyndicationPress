@@ -7,12 +7,12 @@
 <link rel="stylesheet" type="text/css" href="style.css">
 <link rel="shortcut icon" href="art/shortcut-icon.png" /> <!-- Icon -->
 
-<script src="main.js"></script>
+<!--<script src="main.js"></script>-->
 
 </head>
 <body>
 
-    <div id="wrapper">
+    <div id="wrapper" onchange="update()">
 
     	<div id="topbar">
     		<div>
@@ -23,21 +23,56 @@
         <div id="game">
 
 	        <div id="stats">
-		        <p id="stats"></p>
+		        <div id="money"></div>
+                <div id="staff"></div>
+                <div id="jobs"></div>
 		    </div>
 
-		    <p id="name" onclick="Game.changeCompanyName()"></p>
-
-            <script>
-				document.getElementById("stats").innerHTML =
-				"Money: " + Game.money
-				+ "<br> Jobs: " + Game.jobs
-				+ "<br> Staff: " + Game.staff;
-
-				document.getElementById("name").innerHTML = "Company Name: " + Game.companyName;
-            </script>
+            <p id="name" onclick="Game.changeCompanyName();"></p>
 
             <button onclick="Game.addMoney(50)" type="button">Give $50</button>
+
+            <script>
+                /**
+                Syndication Press
+                **/
+                function u(thing) { return document.getElementById(thing); }
+                function choose(arr) {return arr[Math.floor(Math.random()*arr.length)];}
+
+                Game = {};
+
+                Game.randomCompanyName = function() {
+                    return (Math.random()>0.05?(choose(['Magic','Fantastic','Fancy','Sassy','Snazzy','Pretty','Cute','Pirate','Ninja','Zombie','Robot','Radical','Urban','Cool','Sweet','Awful','Double','Triple','Turbo','Techno','Disco','Electro','Dancing','Wonder','Mutant','Space','Science','Medieval','Future','Captain','Bearded','Lovely','Tiny','Big','Fire','Water','Frozen','Metal','Plastic','Solid','Liquid','Moldy','Shiny','Happy','Slimy','Tasty','Delicious','Hungry','Greedy','Lethal','Professor','Doctor','Power','Chocolate','Crumbly','Choklit','Righteous','Glorious','Mnemonic','Psychic','Frenetic','Hectic','Crazy','Royal','El','Von'])+' '):'Mc')+choose(["Newspaper","News","Journal","Press","Syndicate"]);
+                }
+
+                Game.money = 0;
+                Game.jobs = 0;
+                Game.staff = 1;
+                Game.version = "0.0.1";
+                Game.companyName = Game.randomCompanyName();
+                u("name").innerHTML = Game.companyName;
+
+                Items = [];
+                Item = function (name, desc, image, price) {
+                    this.name = name;
+                    this.desc = desc;
+                    this.image = image;
+                    this.price = price;
+                    Items[name] = this;
+                }
+                new Item("Basic newspaper press", "A basic newspaper press for your basic needs.", "BasicPress.png", 100);
+                new Item("Newspaper press", "A reagular newspaper press.", "", 250);
+                new Item("Advanced newspaper Press", "A advanced newspaper press for projects that\nrequire a lot of printing, ex:newspapers", "", 1000);
+
+                Game.changeCompanyName = function () {
+                    Game.companyName = prompt("<h4>New Company Name</h4>", Game.companyName);
+                    u("name").innerHTML = Game.companyName;
+                }
+                Game.addMoney = function (amount) {
+                    Game.money += amount;
+                    amount = 0;
+                }
+            </script>
         </div>
     </div>
 </body>
